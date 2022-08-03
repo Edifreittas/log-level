@@ -12,21 +12,19 @@ hand-on:
 
     1. Alterar log level
     2. Interceptor para MCD
-    3. ELK e slatkc source.
-
-Falar sobre a rule do sonar sobre trycatch cala a boca.
-Suprimir o erro
+    3. Appender
 
 Log Level:
 ref: https://logging.apache.org/log4j/2.x/manual/customloglevels.html
 ref: https://www.youtube.com/watch?v=F0hewZm3O2w
 ref: https://sematext.com/blog/logging-levels/
 
-Java:
+Spring boot Admin:
+https://www.baeldung.com/spring-boot-changing-log-level-at-runtime
+
+Tracer:
 ref: https://www.baeldung.com/spring-cloud-sleuth-single-application
 
 Log ELK:
 https://medium.com/dev-cave/gerenciamento-de-log-com-elk-69133859ca86
 https://www.youtube.com/watch?v=x0Re4F9YNGo
-
-https://www.baeldung.com/spring-boot-changing-log-level-at-runtime
