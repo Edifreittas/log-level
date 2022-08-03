@@ -1,0 +1,6 @@
+[tracer: ], [span: ] - 14:42:12.006 [main] DEBUG com.log.level.LogOneStarter - Running with Spring Boot v2.7.0, Spring v5.3.20
+[tracer: 766b2503249b43be], [span: 766b2503249b43be] - 14:42:57.691 [http-nio-8081-exec-1] DEBUG com.log.level.service.LogService - Log-Level-2 -> timeout: 1000 - sleepTime: 30
+[tracer: 766b2503249b43be], [span: 766b2503249b43be] - 14:42:58.468 [http-nio-8081-exec-1] DEBUG com.log.level.service.LogService - Log-Level-2 -> ResponseTime: 777ms -  ResponseBody: ok
+[tracer: ], [span: ] - 10:10:54.711 [main] DEBUG com.log.level.LogOneStarter - Running with Spring Boot v2.7.2, Spring v5.3.22
+[tracer: ], [span: ] - 10:23:30.469 [main] DEBUG com.log.level.LogOneStarter - Running with Spring Boot v2.7.2, Spring v5.3.22
+[tracer: ], [span: ] - 10:25:13.095 [main] DEBUG com.log.level.LogOneStarter - Running with Spring Boot v2.7.2, Spring v5.3.22

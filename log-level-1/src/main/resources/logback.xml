@@ -1,0 +1,83 @@
+<configuration>
+    <property name="pattern" value="[tracer: %X{traceId:-}], [span: %X{spanId:-}] - %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>./logs/tests.log</file>
+        <append>true</append>
+        <filter class="com.log.level.config.LoggerLevelFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="JSON_OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <appender name="JSON_DEBUG" class="ch.qos.logback.core.FileAppender">
+        <file>./logs/json_debug.log</file>
+        <append>true</append>
+        <filter class="com.log.level.config.LoggerLevelFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <appender name="JSON_INFO" class="ch.qos.logback.core.FileAppender">
+        <file>./logs/json_info.log</file>
+        <append>true</append>
+        <filter class="com.log.level.config.LoggerLevelFilter">
+            <level>INFO</level>
+        </filter>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <appender name="STDOUT_FILTER" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <filter class="com.log.level.config.LoggerLevelFilter">
+            <level>INFO</level>
+            <launcher>true</launcher>
+        </filter>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_ERROR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <filter class="com.log.level.config.LoggerLevelFilter">
+            <level>ERROR</level>
+            <launcher>true</launcher>
+        </filter>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+
+        <appender-ref ref="JSON_OUT" />
+        <appender-ref ref="JSON_INFO" />
+        <appender-ref ref="JSON_DEBUG" />
+
+        <!--
+        <appender-ref ref="JSON" />
+        <appender-ref ref="JSON_OUT" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT_FILTER" />
+        <appender-ref ref="STDOUT_ERROR" />
+
+        -->
+    </root>
+
+</configuration>

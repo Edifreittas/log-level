@@ -1,0 +1,25 @@
+server:
+    port: ${PORT}
+    shutdown: graceful
+    servlet:
+        context-path: /${APP_NAME}
+
+    tomcat:
+        max-threads: 1
+        max-connections: 1
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: httptrace,loggers,health,info,metrics
+spring:
+    boot:
+        admin:
+            client:
+                url: http://localhost:8080
+        name: ${APP_NAME}
+
+logging:
+    level:
+        root: ${LOGGING_LEVEL_ROOT}

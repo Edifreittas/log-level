@@ -1,0 +1,24 @@
+server:
+    port: ${PORT}
+    shutdown: graceful
+    servlet:
+        context-path: /${APP_NAME}
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: httptrace,loggers,health,info,metrics
+spring:
+    boot:
+        admin:
+            client:
+                url: http://localhost:8080
+    application:
+        name: ${APP_NAME}
+
+logging:
+    level:
+        com:
+            log:
+                level: DEBUG
